@@ -5,7 +5,7 @@ env:
   variables:
     AWS_REGION: "ap-south-2"
     ECR_REPO:
-     "991524241826.dkr.ecr.ap-south-2.amazonaws.com/course-jagan"
+     "991524241826.dkr.ecr.ap-south-2.amazonaws.com/vishnu-course"
  
 phases:
   pre_build:
@@ -21,7 +21,7 @@ phases:
   post_build:
     commands:
       - docker push $ECR_REPO:$IMAGE_TAG
-      - printf '[{"name":"app-2048-jagan",
+      - printf '[{"name":"app-2048-vishnu",
           "imageUri":"%s"}]' \
           $ECR_REPO:$IMAGE_TAG > imagedefinitions.json
  
